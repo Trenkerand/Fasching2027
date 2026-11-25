@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Faschings Racing Team – Anmeldung</title>
+<title>Faschings Racing Team 2027 – Anmeldung</title>
 <style>
 :root{--red:#e32636;--yellow:#ffd400;--ink:#111318;--paper:#f5f5f2;--muted:#b7bac1}
 *{box-sizing:border-box}body{margin:0;background:var(--ink);color:#fff;font-family:Arial,Helvetica,sans-serif}
@@ -16,8 +16,8 @@ main{background:var(--paper);color:var(--ink);padding:45px 6% 70px}.sectionhead{
 .events{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:42px}.event{border:2px solid #d8d9dc;padding:18px;min-height:115px;background:white;cursor:pointer;transition:.15s}.event:hover{border-color:var(--red)}.event:has(input:checked){border-color:var(--red);background:#fff4f4;box-shadow:inset 0 0 0 1px var(--red)}.event input{accent-color:var(--red);width:18px;height:18px}.event strong{display:block;margin:9px 0 4px;font-size:17px}.event small{color:#666}.formbox{max-width:780px;background:#fff;padding:clamp(20px,4vw,38px);border-top:6px solid var(--red);box-shadow:0 12px 35px #1111}.formbox h2{margin:0 0 8px;text-transform:uppercase;font-size:28px}.formbox .sub{color:#666;margin:0 0 26px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field.full{grid-column:1/-1}.field label{font-weight:800;font-size:12px;letter-spacing:.04em;display:block;margin-bottom:7px}.field input{width:100%;padding:13px;border:1px solid #c9cbd0;background:#fafafa;font-size:16px;border-radius:0}.checks{margin-top:20px;display:grid;gap:12px}.checks label{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.4}.checks input{accent-color:var(--red);margin-top:2px}.submit{margin-top:24px;background:var(--red);border:0;color:#fff;padding:16px 22px;font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:.05em;cursor:pointer}.submit:hover{background:#bf1829}.msg{display:none;margin-top:18px;padding:14px;background:#e7f4e8;color:#20542a;font-weight:700}.footer{padding:22px 6%;color:#aeb0b7;font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.strip{height:12px;background:repeating-linear-gradient(135deg,var(--yellow) 0 18px,#17181c 18px 36px)}
 .admin-link{background:transparent;border:1px solid #ffffff55;color:#ddd;padding:8px 12px;cursor:pointer;font-weight:700}.admin-panel{display:none;background:#fff;color:#151515;margin:40px auto 0;max-width:1000px;padding:24px;border-top:6px solid var(--yellow)}.admin-panel h2{margin-top:0}.admin-panel input{padding:10px;border:1px solid #aaa}.admin-panel button{padding:10px 14px;border:0;background:#111;color:#fff;font-weight:bold;cursor:pointer;margin:4px}.admin-panel .admin-msg{color:#b01826;font-weight:bold;margin:10px 0}.admin-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.admin-card{border:1px solid #ddd;padding:12px;background:#fafafa}.admin-card h3{margin:0 0 8px}.admin-card li{margin:8px 0;overflow-wrap:anywhere}.admin-card small{color:#666}.admin-actions{margin:12px 0}.admin-note{font-size:12px;color:#777;margin-top:14px}@media(max-width:600px){.fields{grid-template-columns:1fr}.hero{padding-top:48px}.topbar span{display:none}}
 </style></head><body>
-<header class="topbar"><div class="logo"><div class="flag"><i></i><i></i><i></i><i></i><i></i><i></i></div> FASCHING RACING TEAM</div><span>SEASON 2026 / RACE SIGN-UP</span><button class="admin-link" id="adminOpen">VERANSTALTER</button></header>
-<section class="hero"><div class="kicker">MOTORSPORT • FASCHING • TEAM SPIRIT</div><h1>De Startampel<br><span>stehd auf Fasching!</span></h1><p>Heuer bringma mit unsam Faschingswagen as Formel-1-Feeling auf d’Stroß! Ob Rennfahrer, Boxencrew oder verrückte Motorsport-Fans – lassts eich wos einfoin und satz dabei. 🏎️💨</p><div class="note">ANMELDUNG AB 18 JAHREN • MAX. 70 PLÄTZE PRO ZUG</div></section>
+<header class="topbar"><div class="logo"><div class="flag"><i></i><i></i><i></i><i></i><i></i><i></i></div> FASCHING RACING TEAM</div><span>SEASON 2027 / RACE SIGN-UP</span></header>
+<section class="hero"><div class="kicker">MOTORSPORT • FASCHING • TEAM SPIRIT</div><h1>De Startampel<br><span>stehd auf Fasching!</span></h1><p>2027 bringma mit unsam Faschingswagen as Formel-1-Feeling auf d’Stroß! Ob Rennfahrer, Boxencrew oder verrückte Motorsport-Fans – lassts eich wos einfoin und satz dabei. 🏎️💨</p><div class="note">ANMELDUNG AB 18 JAHREN • MAX. 70 PLÄTZE PRO ZUG</div></section>
 <div class="strip"></div><main>
 <div class="sectionhead"><div><b>01 / RENNTERMINE</b><h2>Bei welchen Zügen bist dabei?</h2></div></div>
 <div class="events">
@@ -30,26 +30,47 @@ main{background:var(--paper);color:var(--ink);padding:45px 6% 70px}.sectionhead{
 </div>
 <div class="sectionhead"><div><b>02 / FAHRERDATEN</b><h2>Deine Anmeldung</h2></div></div>
 <form class="formbox" id="signup">
-<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"><h2>Ab in die Startaufstellung!</h2><p class="sub">Füll kurz deine Daten aus – wir freuen uns, dass du dabei bist.</p><div class="fields">
-<div class="field"><label for="name">VOR- & NACHNAME *</label><input id="name" name="Name" required autocomplete="name" placeholder="Max Mustermann"></div>
-<div class="field"><label for="birth">GEBURTSDATUM *</label><input id="birth" name="Geburtsdatum" required type="date"></div>
-<div class="field"><label for="email">E-MAIL *</label><input id="email" name="E-Mail" required type="email" autocomplete="email" placeholder="max@email.de"></div>
-<div class="field"><label for="phone">TELEFONNUMMER *</label><input id="phone" name="Telefonnummer" required type="tel" autocomplete="tel" placeholder="0170 1234567"></div>
-<div class="field full"><label for="extra">ANMERKUNGEN (OPTIONAL)</label><input id="extra" name="Anmerkungen" placeholder="z. B. Fragen, Wünsche, …"></div></div>
-<div class="checks"><label><input id="adult" required type="checkbox"> Ich bestätige, dass ich am jeweiligen Veranstaltungstag mindestens 18 Jahre alt bin.</label><label><input id="privacy" required type="checkbox"> Ich habe verstanden, dass meine Angaben für die Organisation der Faschingszug-Anmeldung verwendet werden.</label></div>
-<button class="submit" type="submit">Anmeldung vormerken →</button><div class="msg" id="msg">Deine Anmeldung wurde übermittelt!</div></form>
-<section class="admin-panel" id="adminPanel"><h2>🏁 Veranstalterbereich</h2><p>Passwort eingeben, um Anmeldungen nach Faschingszug zu sehen.</p><div><input id="adminPassword" type="password" placeholder="Veranstalter-Passwort"><button id="adminLogin">Login</button></div><div class="admin-msg" id="adminMsg"></div><div class="admin-actions" id="adminActions" style="display:none"><button id="refreshList">Anmeldungen aktualisieren</button><button id="exportCsv">CSV exportieren</button><button id="clearRegs">Demo-Anmeldungen löschen</button></div><div class="admin-list" id="adminList"></div><p class="admin-note">Hinweis: Neue Anmeldungen werden per E-Mail an Fasching.2027@gmx.de gesendet. Die Liste in diesem Veranstalterbereich bleibt weiterhin nur lokal in diesem Browser gespeichert. Das Veranstalter-Passwort ist im HTML sichtbar und nicht sicher für den öffentlichen Live-Betrieb.</p></section>
-</main><footer class="footer"><div>🏁 LET'S RACE INTO FASCHING!</div><div>Termine & Plätze vorbehaltlich Zusage / Verfügbarkeit</div></footer>
+<h2>Ab in die Startaufstellung!</h2><p class="sub">Füll kurz deine Daten aus – wir freuen uns, dass du dabei bist.</p><div class="fields">
+<div class="field"><label for="name">VOR- & NACHNAME *</label><input id="name" name="name" required autocomplete="name" maxlength="120" placeholder="Max Mustermann"></div>
+<div class="field"><label for="age">ALTER *</label><input id="age" name="age" required type="number" min="18" max="110" step="1" inputmode="numeric" placeholder="z. B. 25"></div>
+<div class="field"><label for="email">E-MAIL *</label><input id="email" name="email" required type="email" autocomplete="email" maxlength="160" placeholder="max@email.de"></div>
+<div class="field"><label for="phone">TELEFONNUMMER *</label><input id="phone" name="phone" required type="tel" autocomplete="tel" maxlength="40" placeholder="0170 1234567"></div>
+<div class="field full"><label for="extra">ANMERKUNGEN (OPTIONAL)</label><input id="extra" name="notes" maxlength="1000" placeholder="z. B. Fragen, Wünsche, …"></div></div>
+<div class="checks"><label><input id="adult" required type="checkbox"> Ich bestätige, dass ich mindestens 18 Jahre alt bin.</label><label><input id="privacy" required type="checkbox"> Ich bin damit einverstanden, dass meine Angaben zur Organisation der Faschingszug-Anmeldung verarbeitet werden.</label></div>
+<button class="submit" type="submit">Anmeldung absenden →</button><div class="msg" id="msg" role="status" aria-live="polite"></div>
+<p class="sub" style="margin-top:14px">Deine Angaben werden zur Organisation der ausgewählten Faschingszüge verwendet. Bitte keine sensiblen Daten in die Anmerkungen schreiben.</p>
+</form>
+</main><footer class="footer"><div>🏁 LET'S RACE INTO FASCHING 2027!</div><div>Termine & Plätze vorbehaltlich Zusage / Verfügbarkeit</div></footer>
 <script>
-const form=document.getElementById('signup'),msg=document.getElementById('msg');
-const STORAGE_KEY='fasching_racing_demo_regs';
-function getRegs(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch{return []}}
-form.addEventListener('submit',async e=>{e.preventDefault();const selected=[...document.querySelectorAll('input[name="zug"]:checked')].map(x=>x.value);if(!selected.length){alert('Bitte wähle mindestens einen Faschingszug aus.');return;}const dob=new Date(document.getElementById('birth').value);const today=new Date();let age=today.getFullYear()-dob.getFullYear();const m=today.getMonth()-dob.getMonth();if(m<0||(m===0&&today.getDate()<dob.getDate()))age--;if(age<18){alert('Die Anmeldung ist nur ab 18 Jahren möglich.');return;}const reg={id:Date.now(),name:document.getElementById('name').value.trim(),birth:document.getElementById('birth').value,email:document.getElementById('email').value.trim(),phone:document.getElementById('phone').value.trim(),extra:document.getElementById('extra').value.trim(),events:selected,created:new Date().toISOString()};const submitButton=form.querySelector('.submit');submitButton.disabled=true;submitButton.textContent='Wird gesendet …';try{const payload=new FormData(form);payload.append('_subject','Neue Faschings-Anmeldung: '+reg.name);payload.append('_template','table');payload.append('Gewählte Faschingszüge',selected.join(', '));const response=await fetch('https://formsubmit.co/ajax/Fasching.2027@gmx.de',{method:'POST',body:payload,headers:{'Accept':'application/json'}});const result=await response.json();if(!response.ok||result.success!== 'true' && result.success!==true)throw new Error(result.message||'Übermittlung fehlgeschlagen');const regs=getRegs();regs.push(reg);localStorage.setItem(STORAGE_KEY,JSON.stringify(regs));msg.textContent='Vielen Dank! Deine Anmeldung wurde per E-Mail übermittelt.';msg.style.display='block';msg.scrollIntoView({behavior:'smooth',block:'center'});form.reset();}catch(err){alert('Die Anmeldung konnte gerade nicht per E-Mail gesendet werden. Bitte versuche es später erneut oder kontaktiere die Veranstalter direkt.');console.error(err);}finally{submitButton.disabled=false;submitButton.textContent='Anmeldung vormerken →';}});
-const panel=document.getElementById('adminPanel'),adminMsg=document.getElementById('adminMsg'),list=document.getElementById('adminList'),actions=document.getElementById('adminActions');let logged=false;
-document.getElementById('adminOpen').addEventListener('click',()=>{panel.style.display=panel.style.display==='block'?'none':'block';panel.scrollIntoView({behavior:'smooth',block:'start'});});
-document.getElementById('adminLogin').addEventListener('click',()=>{if(document.getElementById('adminPassword').value==='Weissbier2027'){logged=true;adminMsg.textContent='Login erfolgreich (Demo).';actions.style.display='block';renderRegs();}else{logged=false;actions.style.display='none';adminMsg.textContent='Passwort falsch.';list.innerHTML='';}});
-function renderRegs(){if(!logged)return;const regs=getRegs();list.innerHTML='';const destinations=['Triftern','Tettenweis','Neuötting','Eggenfelden','Wurmannsquick','Peterskirchen'];destinations.forEach(place=>{const people=regs.filter(r=>r.events.includes(place));const card=document.createElement('div');card.className='admin-card';const h=document.createElement('h3');h.textContent=place+' ('+people.length+'/70)';card.appendChild(h);if(!people.length){const empty=document.createElement('small');empty.textContent='Noch keine Anmeldungen';card.appendChild(empty);}else{const ul=document.createElement('ul');people.forEach(person=>{const li=document.createElement('li');li.textContent=person.name+' — '+person.email+' — '+person.phone+(person.extra?' | '+person.extra:'');ul.appendChild(li);});card.appendChild(ul);}list.appendChild(card);});}
-document.getElementById('refreshList').addEventListener('click',renderRegs);
-document.getElementById('exportCsv').addEventListener('click',()=>{if(!logged)return;const regs=getRegs();const rows=[['Name','Geburtsdatum','Email','Telefon','Faschingszüge','Notizen'],...regs.map(r=>[r.name,r.birth,r.email,r.phone,r.events.join('; '),r.extra])];const csv=rows.map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(';')).join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='fasching-anmeldungen.csv';a.click();URL.revokeObjectURL(a.href);});
-document.getElementById('clearRegs').addEventListener('click',()=>{if(!logged)return;if(confirm('Demo-Anmeldungen wirklich auf diesem Browser löschen?')){localStorage.removeItem(STORAGE_KEY);renderRegs();}});
+// Nach dem Bereitstellen der Google-Apps-Script-Web-App hier die URL mit /exec eintragen.
+const GOOGLE_SCRIPT_URL = 'HIER_DEINE_GOOGLE_APPS_SCRIPT_EXEC_URL_EINFUEGEN';
+const form = document.getElementById('signup');
+const msg = document.getElementById('msg');
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const selected = [...document.querySelectorAll('input[name="zug"]:checked')].map(x => x.value);
+  if (!selected.length) { msg.textContent = 'Bitte wähle mindestens einen Faschingszug aus.'; msg.style.display='block'; return; }
+  const age = Number(document.getElementById('age').value);
+  if (!Number.isInteger(age) || age < 18 || age > 110) { msg.textContent = 'Die Anmeldung ist nur ab 18 Jahren möglich.'; msg.style.display='block'; return; }
+  if (GOOGLE_SCRIPT_URL.startsWith('HIER_')) { msg.textContent = 'Die Anmeldung ist noch nicht freigeschaltet: Die Google-Tabelle muss zuerst verbunden werden.'; msg.style.display='block'; return; }
+  const button = form.querySelector('.submit');
+  button.disabled = true; button.textContent = 'Wird gesendet …'; msg.style.display='none';
+  const payload = {
+    name: document.getElementById('name').value.trim(),
+    age,
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    events: selected,
+    notes: document.getElementById('extra').value.trim()
+  };
+  try {
+    // Apps Script verarbeitet den POST. no-cors bedeutet, dass der Browser die Serverantwort nicht auslesen kann.
+    await fetch(GOOGLE_SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload) });
+    msg.textContent = 'Vielen Dank! Deine Anmeldung wurde abgeschickt. Bitte prüfe bei Rückfragen dein E-Mail-Postfach.';
+    msg.style.display='block'; msg.scrollIntoView({behavior:'smooth', block:'center'}); form.reset();
+  } catch (error) {
+    msg.textContent = 'Die Anmeldung konnte nicht abgeschickt werden. Bitte versuche es später erneut oder kontaktiere den Veranstalter.';
+    msg.style.display='block';
+  } finally { button.disabled=false; button.textContent='Anmeldung absenden →'; }
+});
 </script></body></html>
