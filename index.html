@@ -42,35 +42,52 @@ main{background:var(--paper);color:var(--ink);padding:45px 6% 70px}.sectionhead{
 </form>
 </main><footer class="footer"><div>🏁 LET'S RACE INTO FASCHING 2027!</div><div>Termine & Plätze vorbehaltlich Zusage / Verfügbarkeit</div></footer>
 <script>
-// Nach dem Bereitstellen der Google-Apps-Script-Web-App hier die URL mit /exec eintragen.
-const GOOGLE_SCRIPT_URL = 'HIER_DEINE_GOOGLE_APPS_SCRIPT_EXEC_URL_EINFUEGEN';
+const FORMSPREE_URL = 'https://formspree.io/f/xwloybzn';
 const form = document.getElementById('signup');
 const msg = document.getElementById('msg');
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const selected = [...document.querySelectorAll('input[name="zug"]:checked')].map(x => x.value);
-  if (!selected.length) { msg.textContent = 'Bitte wähle mindestens einen Faschingszug aus.'; msg.style.display='block'; return; }
+  if (!selected.length) {
+    msg.textContent = 'Bitte wähle mindestens einen Faschingszug aus.';
+    msg.style.display = 'block';
+    return;
+  }
   const age = Number(document.getElementById('age').value);
-  if (!Number.isInteger(age) || age < 18 || age > 110) { msg.textContent = 'Die Anmeldung ist nur ab 18 Jahren möglich.'; msg.style.display='block'; return; }
-  if (GOOGLE_SCRIPT_URL.startsWith('HIER_')) { msg.textContent = 'Die Anmeldung ist noch nicht freigeschaltet: Die Google-Tabelle muss zuerst verbunden werden.'; msg.style.display='block'; return; }
+  if (!Number.isInteger(age) || age < 18 || age > 110) {
+    msg.textContent = 'Die Anmeldung ist nur ab 18 Jahren möglich.';
+    msg.style.display = 'block';
+    return;
+  }
   const button = form.querySelector('.submit');
-  button.disabled = true; button.textContent = 'Wird gesendet …'; msg.style.display='none';
-  const payload = {
-    name: document.getElementById('name').value.trim(),
-    age,
-    email: document.getElementById('email').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    events: selected,
-    notes: document.getElementById('extra').value.trim()
-  };
+  button.disabled = true;
+  button.textContent = 'Wird gesendet …';
+  msg.style.display = 'none';
+  const formData = new FormData(form);
+  formData.append('Faschingsumzüge', selected.join(', '));
+  if (!String(formData.get('notes') || '').trim()) formData.delete('notes');
   try {
-    // Apps Script verarbeitet den POST. no-cors bedeutet, dass der Browser die Serverantwort nicht auslesen kann.
-    await fetch(GOOGLE_SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload) });
-    msg.textContent = 'Vielen Dank! Deine Anmeldung wurde abgeschickt. Bitte prüfe bei Rückfragen dein E-Mail-Postfach.';
-    msg.style.display='block'; msg.scrollIntoView({behavior:'smooth', block:'center'}); form.reset();
+    const response = await fetch(FORMSPREE_URL, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!response.ok) {
+      let detail = '';
+      try { const result = await response.json(); detail = (result.errors || []).map(e => e.message).join(' '); } catch (_) {}
+      throw new Error(detail || 'Formular konnte nicht übermittelt werden.');
+    }
+    msg.textContent = 'Vielen Dank! Deine Anmeldung ist bei uns eingegangen.';
+    msg.style.display = 'block';
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    form.reset();
+    document.querySelectorAll('input[name="zug"]').forEach(x => x.checked = false);
   } catch (error) {
-    msg.textContent = 'Die Anmeldung konnte nicht abgeschickt werden. Bitte versuche es später erneut oder kontaktiere den Veranstalter.';
-    msg.style.display='block';
-  } finally { button.disabled=false; button.textContent='Anmeldung absenden →'; }
+    msg.textContent = 'Die Anmeldung konnte leider nicht gesendet werden. Bitte versuche es später erneut.';
+    msg.style.display = 'block';
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Anmeldung absenden →';
+  }
 });
 </script></body></html>
